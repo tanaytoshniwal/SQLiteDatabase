@@ -22,7 +22,8 @@ public class AddRecord extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-
+                DBHelper obj = new DBHelper(AddRecord.this);
+                ob
             }
         });
         reset.setOnClickListener(new View.OnClickListener(){

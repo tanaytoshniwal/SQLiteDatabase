@@ -49,5 +49,6 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(column3, contact);
         database.insert(table, null, values);
         Log.i(TAG, "Record Inserted");
+        database.close();
     }
 }
