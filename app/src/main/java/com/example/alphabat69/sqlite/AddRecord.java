@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AddRecord extends AppCompatActivity {
     private Button save, reset;
@@ -23,7 +24,11 @@ public class AddRecord extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 DBHelper obj = new DBHelper(AddRecord.this);
-                ob
+                obj.save(name.getText().toString(), password.getText().toString(), contact.getText().toString());
+                Toast.makeText(AddRecord.this, "Record Added", Toast.LENGTH_LONG).show();
+                name.setText("");
+                password.setText("");
+                contact.setText("");
             }
         });
         reset.setOnClickListener(new View.OnClickListener(){
