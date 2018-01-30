@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AddRecord" />
+        <activity android:name=".DeleteASingleRecord" />
+        <activity android:name=".DeleteAll" />
+        <activity android:name=".UpdateRecord" />
+        <activity android:name=".ShowAll" />
+        <activity android:name=".SearchRecord"></activity>
     </application>
 
 </manifest>
