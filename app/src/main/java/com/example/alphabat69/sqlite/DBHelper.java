@@ -51,4 +51,14 @@ public class DBHelper extends SQLiteOpenHelper {
         Log.i(TAG, "Record Inserted");
         database.close();
     }
+
+    //to delete records from database
+    public void delete(String username){
+        database = getWritableDatabase();
+        String[] str = {username};
+        database.delete(table, "username=?", str);
+        Log.i(TAG, "Record Deleted");
+        database.close();
+
+    }
 }
