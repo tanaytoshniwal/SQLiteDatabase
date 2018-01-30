@@ -10,6 +10,7 @@ import android.widget.Toast;
 public class AddRecord extends AppCompatActivity {
     private Button save, reset;
     private EditText name, password, contact;
+    DBHelper obj;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,11 +20,11 @@ public class AddRecord extends AppCompatActivity {
         name = findViewById(R.id.name);
         password = findViewById(R.id.password);
         contact = findViewById(R.id.contact);
+        obj = new DBHelper(AddRecord.this);
 
         save.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                DBHelper obj = new DBHelper(AddRecord.this);
                 obj.save(name.getText().toString(), password.getText().toString(), contact.getText().toString());
                 Toast.makeText(AddRecord.this, "Record Added", Toast.LENGTH_LONG).show();
                 name.setText("");
