@@ -70,4 +70,16 @@ public class DBHelper extends SQLiteOpenHelper {
         database.close();
         return i;
     }
+
+    //to update record
+    public int update(String username, String newpassword, String newcontact){
+        database = getWritableDatabase();
+        ContentValues value = new ContentValues();
+        value.put(column2, newpassword);
+        value.put(column3, newcontact);
+        int i = database.update(table, value, "username=?", new String[]{username});
+        Log.i(TAG, i+" records updated");
+        database.close();
+        return i;
+    }
 }
