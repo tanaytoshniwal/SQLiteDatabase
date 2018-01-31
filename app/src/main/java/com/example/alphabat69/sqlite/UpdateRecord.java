@@ -25,6 +25,8 @@ public class UpdateRecord extends AppCompatActivity {
             public void onClick(View v) {
                 int i = obj.update(username.getText().toString(), newpass.getText().toString(), newcontact.getText().toString());
                 Toast.makeText(UpdateRecord.this, i+" record(s) updated", Toast.LENGTH_LONG).show();
+                newpass.setText("");
+                newcontact.setText("");
             }
         });
     }

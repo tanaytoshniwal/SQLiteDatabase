@@ -2,9 +2,12 @@ package com.example.alphabat69.sqlite;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import java.util.ArrayList;
 
 /**
  * Created by AlphaBAT69 on 31-01-2018.
@@ -81,5 +84,23 @@ public class DBHelper extends SQLiteOpenHelper {
         Log.i(TAG, i+" records updated");
         database.close();
         return i;
+    }
+
+    public ArrayList<StringBuffer> showAll(){
+        database = getWritableDatabase();
+        Cursor c = database.rawQuery("select * from login order by username", null);
+        int count = c.getColumnCount();
+        ArrayList<StringBuffer> list = new ArrayList<>();
+        while(c.moveToNext()){
+            StringBuffer buffer = new StringBuffer();
+            for(int i=0;i<count;i++){
+                buffer.append(c.getString(i));
+                if(i!=count-1)
+                    buffer.append(",");
+            }
+            list.add(buffer);
+        }
+        database.close();
+        return list;
     }
 }
