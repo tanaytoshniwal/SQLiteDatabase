@@ -42,7 +42,7 @@ public class Activity1 extends AppCompatActivity implements View.OnClickListener
                 break;
             }
             case R.id.button4:{
-
+                startActivity(new Intent(Activity1.this, UpdateRecord.class));
                 break;
             }
             case R.id.button5:{
