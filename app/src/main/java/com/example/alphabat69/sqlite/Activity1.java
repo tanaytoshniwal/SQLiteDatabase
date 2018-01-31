@@ -38,7 +38,7 @@ public class Activity1 extends AppCompatActivity implements View.OnClickListener
                 break;
             }
             case R.id.button3:{
-
+                startActivity(new Intent(Activity1.this, DeleteAll.class));
                 break;
             }
             case R.id.button4:{
