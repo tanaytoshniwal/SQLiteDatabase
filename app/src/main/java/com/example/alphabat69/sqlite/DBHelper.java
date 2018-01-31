@@ -32,7 +32,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(createTable);
-        Log.i(TAG,"Database Created Successfully");
+        Log.i(TAG,"Table Created Successfully");
     }
 
     @Override
