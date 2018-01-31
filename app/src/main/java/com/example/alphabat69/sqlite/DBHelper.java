@@ -61,4 +61,13 @@ public class DBHelper extends SQLiteOpenHelper {
         database.close();
 
     }
+
+    //to delete all records
+    public int delete(){
+        database = getWritableDatabase();
+        int i = database.delete(table, null, null);
+        Log.i(TAG, i+" Records deleted");
+        database.close();
+        return i;
+    }
 }
