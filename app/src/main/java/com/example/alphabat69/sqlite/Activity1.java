@@ -46,7 +46,7 @@ public class Activity1 extends AppCompatActivity implements View.OnClickListener
                 break;
             }
             case R.id.button5:{
-
+                startActivity(new Intent(Activity1.this, ShowAll.class));
                 break;
             }
             case R.id.button6:{
